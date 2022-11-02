@@ -1,6 +1,8 @@
 import { SafeAreaView,View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { HeaderHome } from '../components/home/header'
+import { Categories } from '../components/home/categories'
+import { RestaurantItems } from '../components/home/restaurantItem'
 
 export const Homescreen = ()=> {
   return (
@@ -8,6 +10,8 @@ export const Homescreen = ()=> {
       <View style={styles.container1}> 
       <HeaderHome/>
       </View>
+      <Categories/>
+      <RestaurantItems/>
     </SafeAreaView>
   )
 }
