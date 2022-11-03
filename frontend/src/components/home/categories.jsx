@@ -40,7 +40,7 @@ export const Categories = ()=> {
    <View>
      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
      {images.map((image,index)=>(
-        <View style={styles.container}>
+        <View key={++j} style={styles.container}>
             <Image key={j++} style={styles.image} source={image.image}/>
             <Text key={i++} style={styles.text}>{image.name}</Text>
         </View>
