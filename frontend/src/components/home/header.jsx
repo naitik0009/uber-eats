@@ -1,21 +1,20 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React,{useContext} from 'react'
 import { SearchBar } from './searchbar';
-
+import { StateContext } from '../../context/context.api';
 export const HeaderHome=()=> {
-    const [delivery,setDelivery] = React.useState(true);
-    const [pickup,setPickup] = React.useState(false);
+    const {activeTab,setActiveTab} = useContext(StateContext);    
   return (
     <>
     <View style={styles.container}>
-    <TouchableOpacity onPress={()=>{setDelivery(true);setPickup(false)}}>
-    <View style={[styles.container1,delivery?{backgroundColor:"black",}:{backgroundColor:"white"}]}>
-    <Text style={[styles.text,delivery?{color:"white",}:{color:"black"}]}>Delivery</Text>
+    <TouchableOpacity onPress={()=>{setActiveTab("Delivery")}}>
+    <View style={[styles.container1,activeTab==="Delivery"?{backgroundColor:"black",}:{backgroundColor:"white"}]}>
+    <Text style={[styles.text,activeTab==="Delivery"?{color:"white",}:{color:"black"}]}>Delivery</Text>
     </View>
     </TouchableOpacity>
-    <TouchableOpacity onPress={()=>{setDelivery(false);setPickup(!pickup)}}>
-    <View style={[styles.container2,pickup?{backgroundColor:"black",}:{backgroundColor:"white"}]}>
-    <Text style={[styles.text,pickup?{color:"white",}:{color:"black"}]}>Pickup</Text>
+    <TouchableOpacity onPress={()=>{setActiveTab("Pickup");}}>
+    <View style={[styles.container2,activeTab==="Pickup"?{backgroundColor:"black",}:{backgroundColor:"white"}]}>
+    <Text style={[styles.text,activeTab==="Pickup"?{color:"white",}:{color:"black"}]}>Pickup</Text>
     </View>
     </TouchableOpacity>
     </View>
