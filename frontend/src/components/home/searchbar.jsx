@@ -6,7 +6,11 @@ import { Icon } from '@rneui/themed'
 export const SearchBar = () => {
   return (
     <View style={styles.container}>
-      <GooglePlacesAutocomplete placeholder='search' styles={
+      <GooglePlacesAutocomplete placeholder='search' query={{key:"AIzaSyAGCyoPpvB2jJfpcSXSHUsygeb8IG8xXJg"}}
+      onPress={(data,details=null)=>{
+        console.log(data.description)
+      }}
+      styles={
     {
         textInput:{
             backgroundColor:"#eee",

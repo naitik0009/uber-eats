@@ -12,7 +12,6 @@ export const Homescreen = ()=> {
       <HeaderHome/>
       </View>
       <Categories/>
-      
       <RestaurantItems/>
       <BottomNavbar/>
     </SafeAreaView>
